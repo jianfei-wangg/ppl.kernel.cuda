@@ -99,6 +99,7 @@
 #define FUSE_PRELU_V4(_has_prelu, _prelu, _leaky)                                               \
     {                                                                                           \
         if (_has_prelu && dCv4_x_valid && dCv4_y_valid) {                                       \
+            __half *hR = (__half*)Rv4;                                                          \
             if (_has_prelu == 1) {                                                              \
                 _Pragma("unroll") for (int i = 0; i < _INT4_TO_8HALF_; i++)                     \
                 {                                                                               \

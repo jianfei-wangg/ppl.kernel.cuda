@@ -258,7 +258,7 @@ __global__ void __launch_bounds__(CTA_SIZE_IN_THD) KERNEL_NAME(TOTAL_KPARAM_LIST
 
         FUSE_RELU_V1(has_relu);
         FUSE_CLIP_V1(has_clip, clip_max, clip_min);
-        // FUSE_PRELU_V1(has_prelu, prelu, leaky);
+        FUSE_PRELU_V1(has_prelu, prelu, leaky);
 
 
         FUSE_ELT_V1(has_elt, pre_data);
